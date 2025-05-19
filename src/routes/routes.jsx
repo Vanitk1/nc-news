@@ -1,0 +1,20 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom"
+import HomePage from "../pages/homepage"
+import ArticlePage from "../pages/articlespage"
+// import Createpage from "../pages/createPage"
+import ErrorPage from "../pages/errorPage"
+// import Topicspage from "../pages/topicsPage"
+// import Userpage from "../pages/usersPage"
+
+const AllRoutes = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="articles/:article_id" element={<ArticlePage/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
+        </Routes>
+    )
+}
+
+export default AllRoutes

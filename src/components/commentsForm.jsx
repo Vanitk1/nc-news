@@ -21,10 +21,10 @@ const AddComments = ({ article_id, addComment }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='add comments to form'>
+        <form onSubmit={handleSubmit} className='add-comments-to-form'>
             <label htmlFor='new comment' className='hidden'>Add comments</label>
             <textarea id='new-comment' value={body} onChange={e => setBody(e.target.value)} required
-             placeholder='post a comment here '/>
+             placeholder='post-a-comment-here '/>
              {error && <p className="error-text">{error}</p>}
              <button type="submit">Submit</button>
         </form>

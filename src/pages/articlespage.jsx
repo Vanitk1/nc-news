@@ -26,6 +26,16 @@ const ArticlesPage = () => {
       .finally(() => setLoading(false));
     }, [article_id]);
 
+    const handleVote = (vote) => {
+    axios.patch(`https://my-seeding-nc-project.onrender.com/api/articles/${article_id}`, { inc_votes: vote})
+    .then(({ data: { article: updatedArticle }}) => {
+        setArticle(updatedArticle)
+    })
+    .catch(error => {
+        console.error(error)
+    })
+  }
+
     if (loading) {
       return <p className="loading-article-text">Loading article</p>
     }
@@ -70,10 +80,27 @@ const ArticlesPage = () => {
         article_id={article_id}
         addComment={newComment => setComments([newComment, ...comments])}
         />
+        <section className="article-votes">
+        <button
+          aria-label="like-article"
+          onClick={() => handleVote(1)}>
+            👍
+        </button>
+        <span className="total-votes">{article.votes}</span>
+        <button
+          aria-label="unlike-article"
+          onClick={() => handleVote(-1)}>
+            👎
+        </button>
+      </section>
+        <Link to="#comments" className="comment-link">
+        {comments.length} Comments
+        </Link>
         <CommentsList comments={comments}/>
       </section>
     </article>
   );
+
 };
 
 export default ArticlesPage;

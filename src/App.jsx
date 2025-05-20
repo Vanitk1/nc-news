@@ -17,3 +17,9 @@ function App() {
 }
 
 export default App
+
+
+/*notes for myself when refactoring at the end
+
+create a custom hook for loading/error
+*/

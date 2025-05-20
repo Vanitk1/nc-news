@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import CommentsForm from "../components/commentsForm";
+import CommentsList from '../components/commentsList';
 
 const ArticlesPage = () => {
   const { article_id } = useParams()
   const [article, setArticle] = useState(null);
+  const [comments, setComments] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     Promise.all([
       axios.get(`https://my-seeding-nc-project.onrender.com/api/articles/${article_id}`),
+      axios.get(`https://my-seeding-nc-project.onrender.com/api/articles/${article_id}/comments`)
     ])
-    .then(([articleRes]) => {
+    .then(([articleRes, commentsRes ]) => {
       setArticle(articleRes.data.article)
+      setComments(commentsRes.data.comments)
     })
     .catch(err => {
         setError(err.response ? `Error ${err.response.status}` : err.message);
@@ -58,9 +63,17 @@ const ArticlesPage = () => {
           <p key={index}>{parameter}</p>
         ))}
       </section>
+
+      <section className='comments'>
+        <h2 id="comments-header">Comments</h2>
+        <CommentsForm
+        article_id={article_id}
+        addComment={newComment => setComments([newComment, ...comments])}
+        />
+        <CommentsList comments={comments}/>
+      </section>
     </article>
   );
 };
-
 
 export default ArticlesPage;

@@ -36,6 +36,17 @@ const ArticlesPage = () => {
     })
   }
 
+    const deleteComments = (comment_id) => {
+      axios.delete(`https://my-seeding-nc-project.onrender.com/api/comments/${comment_id}`)
+      .then(() => {
+        setComments(current => current.filter(curr => curr.comment_id !== comment_id))
+      })
+      .catch(error => {
+        console.error(error)
+      }) 
+    }
+  
+
     if (loading) {
       return <p className="loading-article-text">Loading article</p>
     }
@@ -96,7 +107,10 @@ const ArticlesPage = () => {
         <Link to="#comments" className="comment-link">
         {comments.length} Comments
         </Link>
-        <CommentsList comments={comments}/>
+        <CommentsList 
+        comments={comments}
+        deleteComment={deleteComments}
+        />
       </section>
     </article>
   );

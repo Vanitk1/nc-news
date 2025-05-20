@@ -166,3 +166,15 @@ body {
   max-width: 500px;
   justify-content: center;
 }
+
+.delete-buttons {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+.delete-button:hover {
+  text-decoration: underline;
+}

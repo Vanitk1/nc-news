@@ -1,6 +1,7 @@
 import React from "react";
 
 const CommentsList = ({ comments, deleteComment}) => (
+  <div className="comments-container">
   <ul className="comments-list">
     {comments.map(e => (
       <li key={e.comment_id} className="comment">
@@ -10,7 +11,7 @@ const CommentsList = ({ comments, deleteComment}) => (
         </p>
         <p>{e.body}</p>
         <button
-          className="delete-button"
+          className="delete-buttons"
           aria-label="delete-comment"
           onClick={() => deleteComment(e.comment_id)}>
           Delete Comment
@@ -18,6 +19,7 @@ const CommentsList = ({ comments, deleteComment}) => (
       </li>
     ))}
   </ul>
+  </div>
 );
 
 export default CommentsList

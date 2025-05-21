@@ -1,5 +1,4 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const ArticleBox = ({ article }) => {
     return(
@@ -21,7 +20,7 @@ const ArticleBox = ({ article }) => {
         <div className="article-footer">
             <button>
                 <Link to={`/articles/${article.article_id}#comments`} className="comment-link">
-                {article.comment_count} comments
+                {article.comment_count} Comments
                 </Link>
             </button>
         </div>

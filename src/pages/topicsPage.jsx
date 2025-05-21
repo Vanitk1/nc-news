@@ -21,8 +21,8 @@ const TopicsPage = () => {
           setData(res.data.topics);
         }
       })
-      .catch(err => {
-        console.error(err);
+      .catch(error => {
+        console.error(error);
         setError('Failed to load');
       })
       .finally(() => setLoading(false));
@@ -37,7 +37,7 @@ const TopicsPage = () => {
     }
 
   return (
-    <main className="topics-page-container">
+    <main className="topics-container">
       {slug ? (
         <div>
           <h1 className="page-title">Topic: {slug}</h1>
@@ -51,12 +51,12 @@ const TopicsPage = () => {
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="text-center">No articles found for this topic.</p>
+          ) : ( 
+          <p className="text-center">No articles found for this topic.</p>
           )}
         </div>
       ) : (
-        <div>
+        <div className='one'>
           <h1 className="page-title">Topics</h1>
           <ul className="topic-grid">
             {data.map(topic => (

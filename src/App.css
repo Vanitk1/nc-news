@@ -1,23 +1,17 @@
 body {
-  background-color: #817c7c;
-}
-.homepage-container,
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
+  background-color: #8a8a8a;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .header-container {
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  background: #d8d3d3;
   padding: 1rem 0;
   text-align: center;
 }
 
 .website-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 }
 .website-list ul {
   list-style: none;
@@ -25,31 +19,167 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 1.5rem
-}
-
-.article-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  font-size: 1.2rem;
 }
 
-.text-center {
+/* .website-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
   text-align: center;
+} */
+
+/* ================== */
+
+.article-location {
+  font-size: 1rem;
 }
 
-.article-container,
-.topics-container {
-  background: #5a5a5a;
-  border-radius: 0rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.article-header {
+  text-decoration: underline;
+}
+
+.article-image {
+  max-height: 1000px;
+  max-width: 500px;
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+.article-body {
+  text-align: center;
+  max-width: 60rem;
+  margin: auto;
+  margin-top: -0.5rem;
+  font-size: 1.3rem;
+}
+
+.comments-container {
+  background: #eeecec;
+  border-radius: 1rem;
+  overflow: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 55rem;
+  margin:1rem auto;
+}
+
+.comments-list {
+  list-style: none; 
+  margin: 2rem auto;       
+  padding: 0; 
+  max-width: 60rem;    
+}
+
+.comments {
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+.comment-tag {
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+  font-size: 1rem;
+}
+
+.comment {
+  background: #fff;
+  border: 1px solid #7c7a7a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+} 
+
+.add-comments-to-form {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding-left: 10px;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.add-comments-to-form button[type="submit"] {
+  align-self: center;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.article-votes button {
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25%;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.article-votes .total-votes {
+  font-size: 1rem;
+  margin: 0 0.75rem;
+}
+
+.article-description {
+  text-decoration: underline;
+}
+.votes-description {
+  font-size: 1rem;
+  margin-top: -1rem;
+}
+
+.comment-link {
+  display: inline-block;
+  
+}
+.comment-tracker {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+
+.comment-link:hover {
+  text-decoration: underline;
+}
+
+.delete-buttons {
+  color: #000000;
+  background: lightgrey;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0.5em;
+  left: 1rem;
+}
+
+.delete-button:hover {
+  text-decoration: underline;
+}
+
+textarea {
+    width: 36rem;
+    height: 10rem;
 }
 
 .link {
@@ -102,6 +232,57 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+ 
+/* ==================== */
+
+.homepage-container,
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.article-header {
+  text-align: center;
+}
+
+.img-container {
+  width: 97%;
+  height: 12rem;
+  object-fit: cover;
+  padding-top: 10px;
+}
+
+.sort-form {
+  padding: 0.5rem;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.article-container {
+  background: #5a5a5a;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding-left: 10px;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* =================== */
 
 .upvote-button {
   background: none;
@@ -117,14 +298,6 @@ body {
   outline-offset: 2px;
 }
 
-.comment-link {
-  font-size: 0.875rem;
-  text-decoration: none;
-}
-
-.comment-link:hover {
-  text-decoration: underline;
-}
 
 .loading-article-text,
 .error-article-text {
@@ -162,26 +335,17 @@ body {
   color: #718096;
 }
 
-.article-image {
-  max-height: 1000px;
-  max-width: 500px;
-  justify-content: center;
+.topic-container {
+  padding: 2rem 1rem;
 }
 
-.delete-buttons {
-  background: none;
-  border: none;
-  color: #e53e3e;
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
-}
-.delete-button:hover {
+.page-title {
+  text-align: center;
   text-decoration: underline;
 }
 
-.topic-container {
-  padding: 2rem 1rem;
+.one {
+  color: lightgray;
 }
 
 .topic-grid {
@@ -190,11 +354,45 @@ body {
   gap: 1rem;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2rem auto;
+  margin-right: 2rem;
+  margin-left: 2rem;
+
 }
 
 .topic-title {
-  text-align: centre;
-  font-size: 2rem;
+  text-align: center;
   margin-bottom: 1.5rem;
+  color: #000000;
+  text-decoration: underline;
+
+}
+
+.topic-card {
+  background-color: lightgray;
+  display: block;
+  padding: 10rem;
+  border: 1px solid black;
+  border-width: 0.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.topic-card:hover,
+.topic-card:focus {
+  transform: translateY(-2px);
+  border-color: white;
+  border-width: 0.5rem;
+}
+
+.topic-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.topic-description {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #000000;
 }

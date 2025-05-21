@@ -4,7 +4,6 @@ import ArticlePage from "../pages/articlespage"
 // import Createpage from "../pages/createPage"
 import ErrorPage from "../pages/errorPage"
 import Topicspage from "../pages/topicsPage"
-// import Userpage from "../pages/usersPage"
 
 const AllRoutes = () => {
     return (

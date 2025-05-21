@@ -45,7 +45,6 @@ const ArticlesPage = () => {
         console.error(error)
       }) 
     }
-  
 
     if (loading) {
       return <p className="loading-article-text">Loading article</p>
@@ -58,8 +57,8 @@ const ArticlesPage = () => {
    return (
     <article className="article-container">
       <nav className="article-location">
-        <Link to="/">Home</Link>
-        <Link to={`/topics/${article.topic}`}> {article.topic}</Link>
+        <Link to="/">Home</Link> - {" "}
+        <Link to={`/topics/${article.topic}`}>{article.topic}</Link>
       </nav>
 
       <header className="article-header">
@@ -80,18 +79,20 @@ const ArticlesPage = () => {
       )}
 
       <section className="article-body">
+        <h5 className='article-description'>Article Information</h5>
         {article.body.split().map((parameter, index) => (
           <p key={index}>{parameter}</p>
         ))}
       </section>
 
       <section className='comments'>
-        <h2 id="comments-header">Comments</h2>
+        <p className='comment-tag'>Add some comments below 👇</p>
         <CommentsForm
         article_id={article_id}
         addComment={newComment => setComments([newComment, ...comments])}
         />
         <section className="article-votes">
+          <p className='votes-description'> Like or dislike the article here</p>
         <button
           aria-label="like-article"
           onClick={() => handleVote(1)}>
@@ -104,8 +105,8 @@ const ArticlesPage = () => {
             👎
         </button>
       </section>
-        <Link to="#comments" className="comment-link">
-        {comments.length} Comments
+        <Link to="#comments" className="comment-tracker">
+        {comments.length} Comments posted
         </Link>
         <CommentsList 
         comments={comments}

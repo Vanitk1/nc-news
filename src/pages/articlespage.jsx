@@ -20,8 +20,8 @@ const ArticlesPage = () => {
       setArticle(articleRes.data.article)
       setComments(commentsRes.data.comments)
     })
-    .catch(err => {
-        setError(err.response ? `Error ${err.response.status}` : err.message);
+    .catch(error => {
+        setError(error.response ? `Error ${error.response.status}` : error.message);
       })
       .finally(() => setLoading(false));
     }, [article_id]);

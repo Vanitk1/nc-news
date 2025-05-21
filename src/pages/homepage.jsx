@@ -44,7 +44,7 @@ const HomePage = () => {
     return (
         <main className='homepage-container'>
             <h1 className='article-header'>All articles</h1>
-            <h3 className='article-header'>Click on any article to read!</h3>
+            <h3 className='article-tag'>Click on any article to read!</h3>
             <div className='sort-form'>
                 <label>
                     <select

@@ -56,7 +56,7 @@ const TopicsPage = () => {
           )}
         </div>
       ) : (
-        <div className='one'>
+        <div>
           <h1 className="page-title">Topics</h1>
           <ul className="topic-grid">
             {data.map(topic => (

@@ -33,8 +33,6 @@ body {
   text-align: center;
 } */
 
-/* ================== */
-
 .article-location {
   font-size: 1rem;
 }
@@ -232,8 +230,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
 }
- 
-/* ==================== */
 
 .homepage-container,
 .container {
@@ -242,7 +238,8 @@ textarea {
   padding: 1rem;
 }
 
-.article-header {
+.article-header,
+.article-tag {
   text-align: center;
 }
 
@@ -281,8 +278,6 @@ textarea {
 .text-center {
   text-align: center;
 }
-
-/* =================== */
 
 .upvote-button {
   background: none;
@@ -344,10 +339,6 @@ textarea {
   text-decoration: underline;
 }
 
-.one {
-  color: lightgray;
-}
-
 .topic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -396,8 +387,6 @@ textarea {
   text-align: center;
   color: #000000;
 }
-
-/* =========== */
 
 .create-container {
   max-width: 700px;

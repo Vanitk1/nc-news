@@ -3,13 +3,13 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const CreatePage = () => {
-  const [title, setTitle]       = useState('');
-  const [body, setBody]         = useState('');
-  const [topic, setTopic]       = useState('');
-  const [author, setAuthor]     = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [loading, setLoading]   = useState(false);
-  const [error, setError]       = useState(null);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [topic, setTopic] = useState("");
+  const [author, setAuthor] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -60,9 +60,9 @@ const CreatePage = () => {
           placeholder="Enter article title"
         />
 
-        <label htmlFor="body">Body</label>
+        <label htmlFor="content">Content</label>
         <textarea
-          id="body"
+          id="content"
           rows="8"
           value={body}
           onChange={e => setBody(e.target.value)}
@@ -77,7 +77,7 @@ const CreatePage = () => {
           value={topic}
           onChange={e => setTopic(e.target.value)}
           required
-          placeholder="e.g. cooking, coding"
+          placeholder="Cooking, Coding etc."
         />
 
         <label htmlFor="author">Author</label>
